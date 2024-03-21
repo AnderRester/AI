@@ -3,7 +3,7 @@ document.addEventListener("mousedown", (mouseData) => {
     buildElementsArray.push(
         new buildItem({
             position: { x: mouseData.x - rect.left, y: mouseData.y - rect.top },
-            size: Array(blockProjections[selectedItem]),
+            size: Array.from(blockProjections[selectedItem]),
         })
     );
 });
@@ -12,7 +12,7 @@ document.addEventListener("mousedown", (mouseData) => {
 const displayBlockPlace = () => {
     new buildItem({
         position: { x: mousePos.x, y: mousePos.y },
-        size: [2, 1],
+        size: blockProjections[selectedItem],
     }).draw();
 };
 
